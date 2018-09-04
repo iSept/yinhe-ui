@@ -11,6 +11,7 @@ const plugin = {
       $vm = new Confirm({
         el: document.createElement('div')
       })
+      document.body.appendChild($vm.$el)
     }
 
     const confirm = {
@@ -20,7 +21,6 @@ const plugin = {
         }
         if (typeof options === 'object' && (options.onShow || options.onHide)) {
           options.onShow && options.onShow()
-          document.body.appendChild($vm.$el)
         }
         $vm.$off('on-cancel')
         $vm.$off('on-confirm')
