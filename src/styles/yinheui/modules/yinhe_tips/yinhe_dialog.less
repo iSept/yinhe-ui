@@ -1,0 +1,139 @@
+@import "../../base/func";
+
+.yinheui-dialog {
+  position: fixed;
+  display: table;
+  z-index: 5000;
+  width: @dialog-width;
+  max-width: @dialog-max-width;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background-color: @yinheDialogBackgroundColor;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.yinhe-dialog__hd {
+  img {
+    display: block;
+    width: 65px;
+    height: 65px;
+    margin: 0 auto;
+    padding: 30px 0 20px;
+  }
+}
+.yinhe-dialog__title {
+  font-weight: 400;
+  font-size: 18px;
+  color: @yinheDialogTextColor;
+}
+.yinhe-dialog__bd {
+  padding: 0 24px 25px;
+  line-height: 20px;
+  font-size: 15px;
+  color: @yinheDialogTextColor;
+}
+.yinhe-dialog__ft {
+  display: flex;
+  position: relative;
+  line-height: 44px;
+  font-size: 18px;
+  overflow: hidden;
+  &:after {
+    content: " ";
+    .setTopLine(@yinheDialogLineColor);
+  }
+  &.center {
+    .yinhe-dialog__btn {
+      flex: none!important;
+      width: 110px;
+      line-height: 34px;
+      margin: 0 auto 25px;
+      border-radius: 5px;
+    }
+    &:after {
+      display: none!important;
+    }
+  }
+}
+.yinhe-dialog__btn {
+  display: block;
+  position: relative;
+  flex: 1;
+  font-size: 16px;
+  color: @yinheDialogLinkColor;
+  text-decoration: none;
+  .setTapColor();
+  &:active {
+    background-color: @yinheDialogLinkActiveBc;
+  }
+  &:after {
+    content: " ";
+    .setLeftLine(@yinheDialogLineColor);
+  }
+  &:first-child {
+    &:after {
+      display: none;
+    }
+  }
+}
+.yinhe-dialog__btn_default {
+  color: @dialog-button-text-default-color;
+}
+.yinhe-dialog__btn_primary {
+  color: @dialog-button-text-primary-color;
+  background-image: @dialog-button-text-primary-bgcolor;
+}
+.yinhe-dialog__btn_warn {
+  color: @dialog-button-text-warn-color;
+}
+
+.yinhe-dialog-two {
+  .yinhe-dialog__hd {
+    padding-top: 24px;
+  }
+  .yinhe-dialog__bd {
+    padding: 24px;
+    color: #666666;
+  }
+  .yinhe-dialog__ft {
+    margin: 0 12px;
+    line-height: 31px;
+    font-size: 15px;
+    &.center {
+      padding-top: 0;
+      .yinhe-dialog__btn {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    &:after {
+      display: none!important;
+    }
+  }
+  .yinhe-dialog__btn {
+    font-size: 15px;
+    margin: 10px 20px 20px;
+    border-radius: 5px;
+    &:after {
+      display: none;
+    }
+  }
+  .yinhe-dialog__btn_default {
+    color: @dialog-button-text-default2-color;
+    background-color: @dialog-button-text-default-bgcolor;
+  }
+  .yinhe-dialog__btn_primary {
+    color: @dialog-button-text-primary-color;
+    background-image: @dialog-button-text-primary-bgcolor;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .yinhe-dialog {
+    width: 35%;
+  }
+}

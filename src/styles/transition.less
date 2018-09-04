@@ -1,0 +1,41 @@
+.yinhe-fade-enter-active,.yinhe-fade-leave-active {
+  opacity: 1;
+  transition: opacity linear 0.2s;
+}
+.yinhe-fade-enter, .yinhe-fade-leave-to {
+  opacity: 0;
+}
+
+.yinhe-mask-enter, .yinhe-mask-leave-active {
+  opacity: 0;
+}
+.yinhe-mask-leave-active, .yinhe-mask-enter-active {
+  transition: opacity 300ms;
+}
+
+.yinhe-dialog-enter-active {
+  animation: yinhe-dialog-in .5s;
+}
+.yinhe-dialog-leave-active {
+  animation: yinhe-dialog-out .3s;
+}
+@keyframes yinhe-dialog-in {
+  0% {
+    transform: scale(1.185);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes yinhe-dialog-out {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+}
